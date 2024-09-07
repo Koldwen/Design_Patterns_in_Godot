@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://cea13soocn8tb"]
+
+[ext_resource type="Script" path="res://node/player_movement_buttons/player_movement_buttons.gd" id="1_b7dqx"]
+[ext_resource type="Texture2D" uid="uid://dfshhp4852s1e" path="res://asset/atlas_texture/input_up.tres" id="2_h3cp3"]
+[ext_resource type="Texture2D" uid="uid://cjgoqb672nwvx" path="res://asset/atlas_texture/input_right.tres" id="3_e78ky"]
+
+[node name="PlayerMovementButtons" type="VBoxContainer"]
+offset_right = 56.0
+offset_bottom = 56.0
+alignment = 1
+script = ExtResource("1_b7dqx")
+
+[node name="HBoxTop" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonUp" type="TextureButton" parent="HBoxTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_h3cp3")
+stretch_mode = 5
+
+[node name="HBoxMiddle" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonLeft" type="TextureButton" parent="HBoxMiddle"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_e78ky")
+stretch_mode = 5
+flip_h = true
+
+[node name="Separator" type="Control" parent="HBoxMiddle"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonRight" type="TextureButton" parent="HBoxMiddle"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_e78ky")
+stretch_mode = 5
+
+[node name="HBoxBottom" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonDown" type="TextureButton" parent="HBoxBottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_h3cp3")
+stretch_mode = 5
+flip_v = true
+
+[connection signal="pressed" from="HBoxTop/ButtonUp" to="." method="_on_button_up_pressed"]
+[connection signal="pressed" from="HBoxMiddle/ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="HBoxMiddle/ButtonRight" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="HBoxBottom/ButtonDown" to="." method="_on_button_down_pressed"]

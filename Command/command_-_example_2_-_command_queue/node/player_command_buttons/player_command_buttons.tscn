@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8lam2sxltdaj"]
+
+[ext_resource type="Script" path="res://node/player_command_buttons/player_command_buttons.gd" id="1_k8wy7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkpl8"]
+font_size = 12
+
+[node name="PlayerCommandButtons" type="VBoxContainer" node_paths=PackedStringArray("queue_label")]
+offset_right = 152.0
+offset_bottom = 46.0
+script = ExtResource("1_k8wy7")
+queue_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Queue:"
+label_settings = SubResource("LabelSettings_nkpl8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonDoNext" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Do next"
+
+[node name="ButtonDoLast" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Do last"
+
+[node name="ButtonDoAll" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Do all"
+
+[connection signal="pressed" from="HBoxContainer/ButtonDoNext" to="." method="_on_button_do_next_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonDoLast" to="." method="_on_button_do_last_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonDoAll" to="." method="_on_button_do_all_pressed"]

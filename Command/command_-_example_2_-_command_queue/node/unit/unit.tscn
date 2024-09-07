@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://drn07u604mclg"]
+
+[ext_resource type="Texture2D" uid="uid://cwc0d8c0en5cl" path="res://asset/tilemap/tilemap.png" id="1_55ucn"]
+[ext_resource type="Script" path="res://node/unit/unit.gd" id="1_hh7yl"]
+[ext_resource type="Resource" uid="uid://dslcpysrxlcp2" path="res://resource/command/move_command/move_up_command.tres" id="2_jk12p"]
+[ext_resource type="Resource" uid="uid://b1gfdut0es8dg" path="res://resource/command/move_command/move_right_command.tres" id="3_qwrj0"]
+[ext_resource type="Resource" uid="uid://umq6i1pnkph7" path="res://resource/command/move_command/move_down_command.tres" id="4_1sksp"]
+[ext_resource type="Resource" uid="uid://caadmslhl2sfh" path="res://resource/command/move_command/move_left_command.tres" id="5_sh7p4"]
+
+[node name="Unit" type="Node2D"]
+script = ExtResource("1_hh7yl")
+move_up_command = ExtResource("2_jk12p")
+move_right_command = ExtResource("3_qwrj0")
+move_down_command = ExtResource("4_1sksp")
+move_left_command = ExtResource("5_sh7p4")
+
+[node name="SpriteUnit" type="Sprite2D" parent="."]
+texture = ExtResource("1_55ucn")
+region_enabled = true
+region_rect = Rect2(85, 136, 16, 16)

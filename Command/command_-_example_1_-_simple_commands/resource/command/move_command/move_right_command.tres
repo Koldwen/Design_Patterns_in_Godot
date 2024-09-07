@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MoveCommand" load_steps=2 format=3 uid="uid://b1gfdut0es8dg"]
+
+[ext_resource type="Script" path="res://script/command/move_command/move_command.gd" id="1_81fi1"]
+
+[resource]
+script = ExtResource("1_81fi1")
+_direction = Vector2(1, 0)
+_distance = 1

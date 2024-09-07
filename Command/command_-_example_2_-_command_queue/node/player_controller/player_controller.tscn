@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cea13soocn8ta"]
+
+[ext_resource type="Script" path="res://node/player_controller/player_controller.gd" id="1_tjlna"]
+[ext_resource type="PackedScene" uid="uid://c8lam2sxltdaj" path="res://node/player_command_buttons/player_command_buttons.tscn" id="2_u2tda"]
+[ext_resource type="PackedScene" uid="uid://cea13soocn8tb" path="res://node/player_movement_buttons/player_movement_buttons.tscn" id="3_xj2pg"]
+
+[node name="PlayerController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjlna")
+
+[node name="PlayerCommandButtons" parent="." instance=ExtResource("2_u2tda")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -54.0
+offset_right = 160.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="PlayerMovementButtons" parent="." instance=ExtResource("3_xj2pg")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="move_down" from="." to="PlayerCommandButtons" method="_on_move_down"]
+[connection signal="move_left" from="." to="PlayerCommandButtons" method="_on_move_left"]
+[connection signal="move_right" from="." to="PlayerCommandButtons" method="_on_move_right"]
+[connection signal="move_up" from="." to="PlayerCommandButtons" method="_on_move_up"]
+[connection signal="do_all" from="PlayerCommandButtons" to="." method="_on_do_all"]
+[connection signal="do_last" from="PlayerCommandButtons" to="." method="_on_do_last"]
+[connection signal="do_next" from="PlayerCommandButtons" to="." method="_on_do_next"]
+[connection signal="move_down" from="PlayerMovementButtons" to="." method="_on_move_down"]
+[connection signal="move_left" from="PlayerMovementButtons" to="." method="_on_move_left"]
+[connection signal="move_right" from="PlayerMovementButtons" to="." method="_on_move_right"]
+[connection signal="move_up" from="PlayerMovementButtons" to="." method="_on_move_up"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MoveCommand" load_steps=2 format=3 uid="uid://dslcpysrxlcp2"]
+
+[ext_resource type="Script" path="res://script/command/move_command/move_command.gd" id="1_d0qat"]
+
+[resource]
+script = ExtResource("1_d0qat")
+_direction = Vector2(0, -1)
+_distance = 1

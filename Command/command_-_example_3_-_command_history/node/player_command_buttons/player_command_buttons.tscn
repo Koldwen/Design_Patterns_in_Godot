@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8lam2sxltdaj"]
+
+[ext_resource type="Script" path="res://node/player_command_buttons/player_command_buttons.gd" id="1_k8wy7"]
+
+[node name="PlayerCommandButtons" type="VBoxContainer"]
+offset_right = 152.0
+offset_bottom = 46.0
+script = ExtResource("1_k8wy7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonUndo" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Undo"
+
+[node name="ButtonRedo" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Redo"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonUndoAll" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Undo all"
+
+[node name="ButtonRedoAll" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Redo all"
+
+[node name="ButtonClear" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Clear"
+
+[connection signal="pressed" from="HBoxContainer/ButtonUndo" to="." method="_on_button_undo_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonRedo" to="." method="_on_button_redo_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ButtonUndoAll" to="." method="_on_button_undo_all_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ButtonRedoAll" to="." method="_on_button_redo_all_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ButtonClear" to="." method="_on_button_clear_pressed"]

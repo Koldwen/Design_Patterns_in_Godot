@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://3710n0lll4gx"]
+
+[ext_resource type="Script" path="res://node/player_controller/player_controller.gd" id="1_j640o"]
+[ext_resource type="PackedScene" uid="uid://cea13soocn8ta" path="res://node/player_movement_buttons/player_movement_buttons.tscn" id="1_jf5ba"]
+
+[node name="PlayerController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j640o")
+
+[node name="PlayerMovementButtons" parent="." instance=ExtResource("1_jf5ba")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="move_down" from="PlayerMovementButtons" to="." method="_on_move_down"]
+[connection signal="move_left" from="PlayerMovementButtons" to="." method="_on_move_left"]
+[connection signal="move_right" from="PlayerMovementButtons" to="." method="_on_move_right"]
+[connection signal="move_up" from="PlayerMovementButtons" to="." method="_on_move_up"]
