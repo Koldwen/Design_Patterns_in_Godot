@@ -9,6 +9,7 @@ extends VBoxContainer
 signal do_next
 signal do_last
 signal do_all
+signal clear
 
 var command_queue: Array[String] = []
 @export var queue_label: Label
@@ -30,6 +31,11 @@ func _on_button_do_all_pressed() -> void:
 	command_queue.clear()
 	_update_queue_label()
 	do_all.emit()
+
+func _on_button_clear_pressed() -> void:
+	command_queue.clear()
+	_update_queue_label()
+	clear.emit()
 
 func _on_move_up() -> void:
 	command_queue.append("Up")

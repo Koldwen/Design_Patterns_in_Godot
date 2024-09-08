@@ -13,6 +13,7 @@ signal move_left
 signal do_next
 signal do_last
 signal do_all
+signal clear
 
 func _on_move_up() -> void:
 	move_up.emit()
@@ -34,3 +35,6 @@ func _on_do_last() -> void:
 
 func _on_do_all() -> void:
 	do_all.emit()
+
+func _on_clear() -> void:
+	clear.emit()

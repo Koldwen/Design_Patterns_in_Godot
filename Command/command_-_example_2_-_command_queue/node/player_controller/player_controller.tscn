@@ -42,6 +42,7 @@ grow_vertical = 0
 [connection signal="move_left" from="." to="PlayerCommandButtons" method="_on_move_left"]
 [connection signal="move_right" from="." to="PlayerCommandButtons" method="_on_move_right"]
 [connection signal="move_up" from="." to="PlayerCommandButtons" method="_on_move_up"]
+[connection signal="clear" from="PlayerCommandButtons" to="." method="_on_clear"]
 [connection signal="do_all" from="PlayerCommandButtons" to="." method="_on_do_all"]
 [connection signal="do_last" from="PlayerCommandButtons" to="." method="_on_do_last"]
 [connection signal="do_next" from="PlayerCommandButtons" to="." method="_on_do_next"]

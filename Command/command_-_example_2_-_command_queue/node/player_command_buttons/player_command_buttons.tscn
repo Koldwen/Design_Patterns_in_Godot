@@ -40,6 +40,14 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 12
 text = "Do all"
 
+[node name="ButtonClear" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Clear"
+
 [connection signal="pressed" from="HBoxContainer/ButtonDoNext" to="." method="_on_button_do_next_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonDoLast" to="." method="_on_button_do_last_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonDoAll" to="." method="_on_button_do_all_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonClear" to="." method="_on_button_clear_pressed"]

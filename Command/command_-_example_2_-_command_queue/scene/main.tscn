@@ -222,6 +222,7 @@ position = Vector2(152, 152)
 
 [node name="PlayerController" parent="HUD" instance=ExtResource("3_vkmuu")]
 
+[connection signal="clear" from="HUD/PlayerController" to="Unit" method="clear"]
 [connection signal="do_all" from="HUD/PlayerController" to="Unit" method="do_all"]
 [connection signal="do_last" from="HUD/PlayerController" to="Unit" method="do_last"]
 [connection signal="do_next" from="HUD/PlayerController" to="Unit" method="do_next"]

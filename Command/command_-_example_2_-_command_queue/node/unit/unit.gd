@@ -35,3 +35,6 @@ func do_last() -> void:
 
 func do_all() -> void:
 	command_queue.do_all()
+
+func clear() -> void:
+	command_queue.clear()
